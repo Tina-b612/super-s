@@ -1,0 +1,259 @@
+body {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #000;
+}
+
+#container {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+#header {
+    display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 30px;
+	padding: 65px 0 0;
+	z-index: 2;
+}
+@keyframes toTop{
+	from{background-position: 0 25px}
+	to{background-position: 0 0}
+}
+#header .title {
+	float: left;
+	margin-left: 75px;
+	width: 120px;
+	height: 25px;
+	background: url(../img/logo.png) no-repeat ;
+	background-size: 100% 100%;
+	animation: toTop 1s linear forwards;
+}
+.menu {
+	margin-right: 75px;
+	padding: 5px 0 0 0 ;
+	float: right;
+	font: 12px/20px "微软雅黑";
+	overflow: hidden;
+}
+@keyframes aToTop{
+	from{top: 25px;}
+	to{top: 0;}
+}
+.menu a {
+	position: relative;
+	top: 25px;
+	display: block;
+	float: left;
+	margin: 0 10px;
+	color: #f3f3f3;
+	animation: aToTop 1s .5s linear forwards;
+}
+.menu a:after {
+	content: "";
+    width: 100%;
+    background: #fff;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform-origin: 0 0;
+    transform: scaleX(0);
+    transition: all .3s linear;
+}
+.menu a:hover:after {
+	transform: scaleX(1);
+}
+
+@keyframes welToTop{
+	from{top: 0 ;}
+	to{
+		top: -100%; 
+		display: none;
+	}
+}
+#welcome {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #FFFFFF;
+	animation: welToTop .3s 3.5s ease-in forwards;
+	z-index: 2;
+}
+.welcome-box {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -29px 0 0 -260px;
+}
+@keyframes icoToTop{
+	0% {background-position: 0 43px}
+	30% {background-position: 0 0;}
+	80% {background-position: 0 0;}
+	100%{background-position: 0 -43px}
+}
+.welcome-ico {
+	margin: 0 auto;
+	width: 510px;
+	height: 43px;
+	background: url(../img/welcome-name.png) no-repeat ;
+	animation: icoToTop 3.5s linear forwards;
+}
+@-moz-keyframes inToTop{
+	from{background-position: 0 10px;}
+	to{background-position: 0 0;}
+}
+.welcome-inner {
+	margin: 20px auto;
+	width: 300px;
+	height: 15px;
+	background: url(../img/welcome-inner.png) no-repeat ;
+	animation: icoToTop 3.5s linear forwards;
+}
+
+#home {
+	position: relative;
+	height: 100%;
+	cursor: pointer;
+}
+
+@keyframes in-toTop{
+	from{
+		transform: translateY(100%);
+		opacity: 0;
+	}
+	to{
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+#home .show {
+	opacity: 1;
+}
+ #tips {
+ 	position: absolute;
+    bottom: 70px;
+    color: #fff;
+    font: 12px/20px "微软雅黑";
+    padding: 0 70px;
+    opacity: 0;
+    overflow: hidden;
+ }
+  #tips .tips-inner {
+  	transform: translateY(100%);
+  	animation: in-toTop 1s .5s linear forwards;
+  }
+#home .slides {
+	position: relative;
+    width: 100%;
+    height: 100%;
+    transition: all .5s linear;
+    overflow: hidden;
+}
+#home .slide {
+	position: absolute;
+	top: 0;
+	left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#home .slide .title {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+}
+
+.slide .title .letter {
+	position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.title-warp {
+	width: 100%;
+    height: 100%;
+    transition: all 1s ease-out;
+    position: absolute;
+    top: 0;
+}
+.slide .title .letter {
+    position: relative;
+	flex-basis: 25%;
+	height: 340px;
+}
+.slide .title .letter .inner {
+	display: block;
+    position: relative;
+    top: 400px;
+    left:0;
+	width: 100%;
+	height: 100%;
+}
+   
+.slide .title .letter:nth-child(1) .inner{
+	background: url(../img/U.png) no-repeat;
+    background-size: auto 340px;
+}
+.slide .title .letter:nth-child(2) .inner{
+	background: url(../img/I.png) no-repeat 30%; 
+    background-size: auto 340px;
+}
+.slide .title .letter:nth-child(3) .inner{
+	background: url(../img/U-copy.png) no-repeat 70%;
+    background-size: auto 340px;
+}
+.slide .title .letter:nth-child(4) .inner{
+	background: url(../img/E.png) no-repeat right;
+    background-size: auto 340px;
+}
+@keyframes toBig{
+	from{
+		transform: scale(1.2);
+		 opacity: 0;
+	}
+	to{
+		transform: scale(1);
+		 opacity: 1;
+	}
+}
+#home .UIUE .image {
+    display: none;
+    position: absolute;
+	width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1000px;
+    opacity: 0;
+    transform: scale(1);
+    animation: toBig .5s linear forwards;
+}
+
+#home .UIUE .img-wrapper {
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: all 1s ease-out;
+    z-index: 1;
+}
+#home .UIUE .img-wrapper  img {
+	width: 110%;
+    position: absolute;
+    bottom: -15%;
+}	
+
+
