@@ -37,7 +37,7 @@ body {
 	animation: toTop 1s linear forwards;
 }
 .menu {
-	margin-right: 75px;
+	margin-right: 120px;
 	padding: 5px 0 0 0 ;
 	float: right;
 	font: 12px/20px "微软雅黑";
@@ -140,7 +140,7 @@ body {
 #home .show {
 	opacity: 1;
 }
- #tips {
+#tips {
  	position: absolute;
     bottom: 70px;
     color: #fff;
@@ -148,11 +148,11 @@ body {
     padding: 0 70px;
     opacity: 0;
     overflow: hidden;
- }
-  #tips .tips-inner {
+}
+#tips .tips-inner {
   	transform: translateY(100%);
-  	animation: in-toTop 1s .5s linear forwards;
-  }
+  	animation: in-toTop 1s 5s linear forwards;
+}
 #home .slides {
 	position: relative;
     width: 100%;
@@ -180,8 +180,9 @@ body {
 	position: relative;
     overflow: hidden;
     text-align: center;
+	flex-basis: 25%;
+	height: 340px;
 }
-
 .title-warp {
 	width: 100%;
     height: 100%;
@@ -189,12 +190,7 @@ body {
     position: absolute;
     top: 0;
 }
-.slide .title .letter {
-    position: relative;
-	flex-basis: 25%;
-	height: 340px;
-}
-.slide .title .letter .inner {
+.slide .letter .inner {
 	display: block;
     position: relative;
     top: 400px;
@@ -202,21 +198,26 @@ body {
 	width: 100%;
 	height: 100%;
 }
-   
-.slide .title .letter:nth-child(1) .inner{
-	background: url(../img/U.png) no-repeat;
+
+
+/**UIUE**/
+.UIUE{
+	display: block;
+}
+.UIUE .letter:nth-child(1) .inner{
+	background: url(../img/UIUE/U.png) no-repeat;
     background-size: auto 340px;
 }
-.slide .title .letter:nth-child(2) .inner{
-	background: url(../img/I.png) no-repeat 30%; 
+.UIUE .letter:nth-child(2) .inner{
+	background: url(../img/UIUE/I.png) no-repeat 30%; 
     background-size: auto 340px;
 }
-.slide .title .letter:nth-child(3) .inner{
-	background: url(../img/U-copy.png) no-repeat 70%;
+.UIUE .letter:nth-child(3) .inner{
+	background: url(../img/UIUE/U-copy.png) no-repeat 70%;
     background-size: auto 340px;
 }
-.slide .title .letter:nth-child(4) .inner{
-	background: url(../img/E.png) no-repeat right;
+.UIUE .letter:nth-child(4) .inner{
+	background: url(../img/UIUE/E.png) no-repeat right;
     background-size: auto 340px;
 }
 @keyframes toBig{
@@ -229,7 +230,7 @@ body {
 		 opacity: 1;
 	}
 }
-#home .UIUE .image {
+#home .image {
     display: none;
     position: absolute;
 	width: 100%;
@@ -241,8 +242,7 @@ body {
     transform: scale(1);
     animation: toBig .5s linear forwards;
 }
-
-#home .UIUE .img-wrapper {
+#home .img-wrapper {
 	width: 100%;
     height: 100%;
     position: absolute;
@@ -250,10 +250,94 @@ body {
     transition: all 1s ease-out;
     z-index: 1;
 }
-#home .UIUE .img-wrapper  img {
+#home .img-wrapper  img {
 	width: 110%;
     position: absolute;
     bottom: -15%;
-}	
+}
 
 
+/**ICON**/
+.ICON {
+	display: none;
+}
+.ICON .letter:nth-child(1) .inner{
+	background: url(../img/ICON/I.png) no-repeat;
+	background-size: auto 340px;
+}
+.ICON .letter:nth-child(2) .inner{
+	background: url(../img/ICON/C.png) no-repeat 30%;
+	background-size: auto 340px;
+}
+.ICON .letter:nth-child(3) .inner{
+	background: url(../img/ICON/O.png) no-repeat 70%;
+	background-size: auto 340px;
+}
+.ICON .letter:nth-child(4) .inner{
+	background: url(../img/ICON/O.png) no-repeat right;
+	background-size: auto 340px;
+}
+
+/**GRAPHIC**/
+.GRAPHIC {
+	display: none;
+	flex-basis: 14.2%;
+}
+.GRAPHIC .letter:nth-child(1) .inner{
+	background: url(../img/graphic/G.png) no-repeat ;
+	background-size: auto 340px;
+}
+.GRAPHIC .letter:nth-child(2) .inner{
+	background: url(../img/graphic/R.png) no-repeat 15%;
+	background-size: auto 340px;
+}
+.GRAPHIC .letter:nth-child(3) .inner{
+	background: url(../img/graphic/A.png) no-repeat 30%;
+	background-size: auto 340px;
+}
+.GRAPHIC .letter:nth-child(4) .inner{
+	background: url(../img/graphic/P.png) no-repeat 45%;
+	background-size: auto 340px;
+}
+.GRAPHIC .letter:nth-child(5) .inner{
+	background: url(../img/graphic/h.png) no-repeat 60%;
+	background-size: auto 340px;
+}
+.GRAPHIC .letter:nth-child(6) .inner{
+	background: url(../img/graphic/i.png) no-repeat 75%;
+	background-size: auto 340px;
+}
+.GRAPHIC .letter:nth-child(7) .inner{
+	background: url(../img/graphic/c.png) no-repeat right;
+	background-size: auto 340px;
+}
+
+/**RESUME**/
+.RESUME {
+	display: none;
+	flex-basis: 16.6%;
+}
+.RESUME .letter:nth-child(1) .inner{
+	background: url(../img/resume/r.png) no-repeat ;
+	background-size: auto 340px;
+}
+.RESUME .letter:nth-child(2) .inner{
+	background: url(../img/resume/lE.png) no-repeat 20%;
+	background-size: auto 340px;
+}
+.RESUME .letter:nth-child(3) .inner{
+	background: url(../img/resume/s.png) no-repeat 40%;
+	background-size: auto 340px;
+}
+.RESUME .letter:nth-child(4) .inner{
+	background: url(../img/resume/u.png) no-repeat 60%;
+	background-size: auto 340px;
+}
+.RESUME .letter:nth-child(5) .inner{
+	background: url(../img/resume/m.png) no-repeat 80%;
+	background-size: auto 340px;
+}
+.RESUME .letter:nth-child(6) .inner{
+	background: url(../img/resume/e.png) no-repeat right;
+	background-size: auto 340px;
+}

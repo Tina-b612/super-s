@@ -3,10 +3,10 @@ $(document).ready(function (){
     $("#welcome").on("animationend", function () {
         $("#header").css('display','block');
         setTimeout(function (){
-            var len = $(".letter").length;
+            var len = $(".UIUE .inner").length;
             for(let i = 0; i < len; i++){
                 setTimeout(function (){
-                    $(".inner").eq(i).animate({
+                    $(".UIUE .inner").eq(i).animate({
                         'top':'0'
                     },1000);
                 },i*100);
@@ -28,11 +28,9 @@ $(document).ready(function (){
 
     //切换效果
     $(".tips-inner").eq(0).on("animationend",function (){
-        console.log(1235);
         mouseWheel(document,upFn,downFn);	//滚轮事件调用
     });
 
-    console.log($(".uiue .letter"));
     //滚轮事件函数
     function mouseWheel(element,upFn,downFn){
         element.onmousewheel = wheelFn;
@@ -53,50 +51,109 @@ $(document).ready(function (){
             }else{  //向下
                 typeof downFn === "function" && downFn();
             }
-
             ev.preventDefault();
         }
     }
-    var page = 0;
-    var onChange = false;
+
+    var page = 0;   //初始化页码
+    var prevPage = 0;
+    var onChange = false;   //给页面设置状态
+    //向下
     function downFn(){
         if(!onChange){
+            if(page === 3)return;
             onChange = true;
             page++;
-            console.log(page);
             switch (page){
                 case 1 :
-                    $(".image").fadeOut();
-                    var len = $(".uiue .letter").length;
-                    for(let i = 0; i < len; i++ ) {
-                        setTimeout(function () {
-                            $(".uiue .letter").eq(i).animate({
-                                'top': '-800px'
-                            }, 1000);
-                            if(i===len-1){
-                                onChange = false;
+                    change($(".UIUE .inner"),-800,$(".ICON .inner"),0);
+                    break;
+                case 2 :
+                    change($(".ICON .inner"),-800,$(".GRAPHIC .inner"),0);
+                    break;
+                case 3 :
+                    change($(".GRAPHIC .inner"),-800,$(".RESUME .inner"),0);
+                    break;
+            }
+
+        }
+    }
+
+    function change(ele,num,nextEle,nextNum){
+        $(".image").fadeOut();
+        var len = ele.length;
+        for(let i = 0; i < len; i++ ) {
+            setTimeout(function () {
+                ele.eq(i).animate({
+                    'top': num+'px'
+                }, 1000);
+                if(i===len-1){
+                    setTimeout(function () {
+                        $('.slide').eq(prevPage).css('display','none');
+                        $('.slide').eq(page).css('display','block');
+                        var len = nextEle.length;
+                        for(let i = 0; i < len; i++){
+                            setTimeout(function (){
+                                nextEle.eq(i).animate({
+                                    'top': nextNum+'px'
+                                },1000);
+                            },i*100);
+                            if(i === len-1){
+                                setTimeout(function (){
+                                    onChange = false;
+                                },1000)
                             }
-                        }, i * 100);
-                    }
-                break;
+                        }
+                        $(".image").fadeIn();
+                        prevPage = page;
+                    },1000)
+                }
+            }, i * 100);
+        }
+    }
+
+    //向上
+    function upFn(){
+        if(!onChange){
+            if(page === 0)return;
+            onChange = true;
+            page--;
+            console.log(page);
+            switch (page){
+                case 0 :
+                    change($(".ICON .inner"),800,$(".UIUE .inner"),0);
+                    break;
+                case 1 :
+                    change($(".GRAPHIC .inner"),800,$(".ICON .inner"),0);
+                    break;
+                case 2 :
+                    change($(".RESUME .inner"),800,$(".GRAPHIC .inner"),0);
+                    break;
             }
         }
+    }
+
+	//点击跳转
+	
+	$(document).on('click',function (e){
+		var target = $(e.target).data().name;
+		console.log(target);
+		switch (target){
+			case 'uiue':
+				location.href = "./view/SportGame.html";
+				break;
+			case 'icon':
+				location.href = "./resume.html";
+				break;
+			case 'graphic':
+				location.href = "./resume.html";
+				break;
+			case 'resume':
+				location.href = "./resume.html";
+				break;
+		}
+	})
 
 
-    }
-    function upFn(){
-        page--;
-        console.log(page);
-        console.log("up");
-        $(".image").fadeIn();
-        var len = $(".letter").length;
-        for(let i = 0; i < len; i++ ){
-            setTimeout(function () {
-                $(".letter").eq(i).animate({
-                    'top':'0'
-                },1000);
-            },i*50);
-        }
-    }
 
 });

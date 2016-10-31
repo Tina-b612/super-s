@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>All Works</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="css/work.css"/>
+    <link rel="stylesheet" type="text/css" href="css/publick.css"/>
+</head>
+<body>
+<header id="header">
+    <h1 class="title">
+        <a href="./index.html">回到主页</a>
+    </h1>
+    <nav class="menu">
+        <a href="./resume.html">我的简历 </a>
+        <a href="./work.html">全部作品 </a>
+        <a href="./contact.html">联系方式 </a>
+    </nav>
+</header>
+<section id="content">
+    <div class="image-list">
+        <img src="img/hermes.png" alt="">
+        <img src="img/hermes.png" alt="">
+        <img src="img/hermes.png" alt="">
+        <img src="img/hermes.png" alt="">
+        <img src="img/hermes.png" alt="">
+        <img src="img/hermes.png" alt="">
+        <img src="img/hermes.png" alt="">
+    </div>
+    <ul class="work-list">
+        <li>
+            <a href="./view/SportGame.html">
+                <img src="img/allworks/Game-APP.png" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="./view/EAB.html">
+                <img src="img/allworks/eab-app.png" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="./view/ECommerce.html">
+                <img src="img/allworks/ec-APP.png" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="./view/food.html">
+                <img src="img/allworks/food-APP.png" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="./view/Sociality.html">
+                <img src="img/allworks/Social-APP.png" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="./view/SportGame.html">
+                <img src="img/allworks/icon.png" alt="">
+            </a>
+        <li>
+            <a href="./view/SportGame.html">
+                <img src="img/allworks/graphic-WORK.png" alt="">
+            </a>
+        </li>
+    </ul>
+</section>
+<script>
+    window.onload = function () {
+        var workList = document.getElementsByClassName("work-list")[0];
+        var imageList = document.getElementsByClassName("image-list")[0];
+        var ali = workList.getElementsByTagName("li");
+        var aimg = imageList.getElementsByTagName("img");
+        var len = ali.length;
+
+        for(var i = 0; i < len; i++){
+            ali[i].index = i;
+            ali[i].onmouseover = function () {
+                aimg[this.index].style.transform = "scale(1)";
+                aimg[this.index].style.opacity = .8;
+            };
+            ali[i].onmouseout = function () {
+                aimg[this.index].style.transform = "scale(1.2)";
+                aimg[this.index].style.opacity = 0;
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

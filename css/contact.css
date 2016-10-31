@@ -1,0 +1,96 @@
+
+.hey {
+    padding-top: 180px;
+	width: 100%;
+	height: 700px;
+    box-sizing: border-box;
+    display: flex;
+}
+.hey .letter {
+    height: 259px;
+    width: 10%;
+    overflow: hidden;
+}
+@keyframes info {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+.hey .info {
+    width: 35%;
+    opacity: 0;
+    text-align: center;
+    font: 12px/259px '微软雅黑';
+    animation: info 1.5s 1.5s linear forwards;
+}
+@keyframes letter {
+    from{transform: translateY(100%);}
+    to{transform: translateY(0);}
+}
+.hey .letter-inner {
+    display: block;
+    transform: translateY(100%);
+    width: 100%;
+    height: 100%;
+    animation: letter 1.5s 1.5s linear forwards;
+}
+.hey .letter:nth-child(1) .letter-inner {
+    background: url(../img/hey/h.png) no-repeat;
+}
+.hey .letter:nth-child(3) .letter-inner {
+    background: url(../img/hey/e.png) no-repeat center;
+}
+.hey .letter:nth-child(5) .letter-inner {
+    background: url(../img/hey/y.png) no-repeat  right;
+}
+@keyframes bottom {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+.bottom {
+    opacity: 0;
+    position: fixed;
+    bottom: 30px;
+    left: 5%;
+    animation: bottom 1s 2s linear forwards;
+}
+
+.contact {
+    position: relative;
+    height: 700px;
+    background: #050407;
+    color：#ffffff;
+}
+.contact-img {
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    width: 427px;
+    height:185px;
+}
+.contact-list {
+    position: absolute;
+    top: 60%;
+    right: 5%;
+    width:300px;
+    font: 18px/40px "微软雅黑";
+}
+.contact-list .ico {
+    display: inline-block;
+    width: 18px;
+    height:18px;
+    vertical-align: sub;
+    margin-right: 15px;
+}
+.contact-list li:nth-child(1) .ico {
+    background: url(../img/QQ.png) no-repeat;
+}
+.contact-list li:nth-child(2) .ico {
+    background: url(../img/phone.png) no-repeat;
+}
+.contact-list li:nth-child(3) .ico {
+    background: url(../img/emali.png) no-repeat;
+}
+
+
+
+
